@@ -1,4 +1,4 @@
-package com.grpc.runner;
+package org.grpc.runner;
 
 
 import io.cucumber.junit.Cucumber;

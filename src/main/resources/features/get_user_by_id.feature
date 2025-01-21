@@ -8,4 +8,4 @@ Feature: get user by id
     When user stores the id
     And user sets the id as the body from add user
     And user calls getUserById methode
-    Then verify the name of the user is "shamil"
+    Then verify the name of the user is "shamsdil"

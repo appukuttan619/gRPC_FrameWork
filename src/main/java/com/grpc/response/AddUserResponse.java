@@ -14,6 +14,7 @@ public class AddUserResponse extends ResponseBase{
 
     public void storeId() {
         userId = Integer.parseInt(addUserResponse.getUser().getId());
+//        userId = 300;
         System.out.println(userId);
     }
 }

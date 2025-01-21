@@ -1,4 +1,4 @@
-package com.grpc.steps;
+package com.grpc.steps.add_user;
 
 import com.grpc.request.AddUserRequest;
 import io.cucumber.java.en.*;

@@ -1,6 +1,5 @@
-package com.grpc.steps;
+package com.grpc.steps.add_user;
 
-import com.grpc.config.ResponseConfig;
 import com.grpc.response.AddUserResponse;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
