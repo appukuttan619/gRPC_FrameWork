@@ -19,11 +19,9 @@ public class Hooks {
 
     @After
     public void tearDown(Scenario scenario){
-//        RequestBase.channel.shutdown();
-
         ChannelManager.closeChannel();
-        ReportManager.writeText("statusCode :" + 3);
-//        scenario.log("text log test ----------------------");
+//        ReportManager.writeText("statusCode :" + 3);
+        ReportManager.printStatus();
     }
 
 }

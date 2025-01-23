@@ -11,3 +11,5 @@ Feature: Adding a new user with hobbies
       | anakha | Reed      |
       | bagyan | study     |
       | test   | test      |
+   	  | uday   |footbll    |
+   

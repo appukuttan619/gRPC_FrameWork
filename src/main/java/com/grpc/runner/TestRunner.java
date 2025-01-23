@@ -15,9 +15,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/main/resources/features",
         glue = "com.grpc.steps",
-        plugin = "json:target/cucumber.json"
-
-//        tags = "@Smoke"
+        plugin = "json:target/cucumberJson/cucumber.json"
+//        ,tags = "@Smoke"
 )
 public class TestRunner {
 }

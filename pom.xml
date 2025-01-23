@@ -88,13 +88,21 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.16.1</version>
+            <version>7.20.1</version>
         </dependency>
+
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>7.16.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.8.1</version>
         </dependency>
 
         <!--        <dependency>-->
@@ -107,6 +115,8 @@
     </dependencies>
 
     <build>
+
+<!--        for protoc -->
         <extensions>
             <extension>
                 <groupId>kr.motd.maven</groupId>
@@ -125,6 +135,7 @@
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.19.0:exe:${os.detected.classifier}</pluginArtifact>
                     <clearOutputDirectory>false</clearOutputDirectory>
                     <outputDirectory>${basedir}/src/main/java</outputDirectory>
+<!--                    <protoSourceRoot>${basedir}/src/proto</protoSourceRoot>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -139,11 +150,31 @@
 
 
 
-<!--            full cucumber reporting pluggin -->
+<!--            full cucumber reporting plugin -->
+<!--            <plugin>-->
+<!--                <groupId>net.masterthought</groupId>-->
+<!--                <artifactId>maven-cucumber-reporting</artifactId>-->
+<!--                <version>4.9.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>execution</id>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <projectName>gRPC_Framework</projectName>-->
+<!--                            <outputDirectory>CucumberReport</outputDirectory>-->
+<!--&lt;!&ndash;                            <jsonFiles>${basedir}/target/cucumber.json</jsonFiles>&ndash;&gt;-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.4.0</version>
+                <version>4.9.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -152,8 +183,14 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>DataTablesAutomation</projectName>
-                            <outputDirectory>CucumberReport</outputDirectory>
+                            <projectName>gRPC_Framework</projectName>
+                            <outputDirectory>target/cucumber-reports</outputDirectory>
+                            <jsonFiles>
+                                <param>
+                                    **/*.json
+                                </param>
+                            </jsonFiles>
+                            <inputDirectory>target/cucumberJson</inputDirectory>
                         </configuration>
                     </execution>
                 </executions>

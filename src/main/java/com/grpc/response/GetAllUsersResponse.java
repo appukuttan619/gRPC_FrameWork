@@ -10,7 +10,7 @@ public class GetAllUsersResponse extends ResponseBase{
         List<UserServiceOuterClass.User> users = getAllUsersResponse.getUsersList();
 
         for(UserServiceOuterClass.User user : users){
-            System.out.println(user);
+//            System.out.println(user);
         }
     }
 }
