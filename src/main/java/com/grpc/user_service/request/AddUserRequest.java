@@ -1,20 +1,28 @@
-package com.grpc.request;
+package com.grpc.user_service.request;
 
 import com.anand.grpc.UserServiceOuterClass;
-import com.grpc.response.ResponseBase;
+import com.grpc.user_service.response.ResponseBase;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
-public class GetAllUsersRequest extends RequestBase{
+public class AddUserRequest extends RequestBase{
 
+    UserServiceOuterClass.AddUserRequest addUserRequest;
 
-    UserServiceOuterClass.GetAllUserRequest getAllUserRequest ;
-    static UserServiceOuterClass.GetAllUserRequest.Response getAllUserResponse;
-    public void callGetAllUsers() {
-        getAllUserRequest = UserServiceOuterClass.GetAllUserRequest.newBuilder().build();
+    private static UserServiceOuterClass.AddUserRequest.Response addUserResponse;
 
+    public void setUserNameAndHobby(String name, String hobby) {
+        addUserRequest = UserServiceOuterClass.AddUserRequest.newBuilder()
+                .setName(name)
+                .addHobbies(hobby)
+//                .setField("header","")
+                .build();
+    }
+
+    public void callAddUser() {
         try {
-            getAllUserResponse = stub.getAllUser(getAllUserRequest);
+            addUserResponse = stub.addUser(addUserRequest);
+
             System.out.println(Status.OK.getCode().value());
 
             // updating the status code for ok
@@ -30,9 +38,14 @@ public class GetAllUsersRequest extends RequestBase{
             ResponseBase.statusCode = status.getStatus().getCode().value();
             ResponseBase.status = status.getStatus().getCode() + "";
         }
+
     }
 
-    public static UserServiceOuterClass.GetAllUserRequest.Response getGetAllUserRsponse(){
-        return getAllUserResponse;
+
+    public static UserServiceOuterClass.AddUserRequest.Response getAddUserResponse(){
+//        System.out.println("lksjdflskjdflksjdflksjdlfkj");
+//
+//        System.out.println(addUserResponse.getUser().getName());
+        return addUserResponse;
     }
 }

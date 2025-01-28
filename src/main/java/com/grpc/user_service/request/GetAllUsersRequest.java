@@ -1,31 +1,20 @@
-package com.grpc.request;
+package com.grpc.user_service.request;
 
 import com.anand.grpc.UserServiceOuterClass;
-import com.grpc.response.AddUserResponse;
-import com.grpc.response.ResponseBase;
-import com.grpc.utils.ReportManager;
+import com.grpc.user_service.response.ResponseBase;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
-import javax.net.ssl.SSLEngineResult;
-
-public class GetUserByIdRequest extends RequestBase{
-
-    public static UserServiceOuterClass.GetUserByIdRequest.Response getUserByIdResponse;
-
-    UserServiceOuterClass.GetUserByIdRequest getUserByIdRequest;
+public class GetAllUsersRequest extends RequestBase{
 
 
-    public void setIdFromAddUser() {
-        getUserByIdRequest = UserServiceOuterClass.GetUserByIdRequest.newBuilder()
-                .setId(AddUserResponse.userId + "")
-                .build();
-    }
-
-    public void callGetUserById() {
+    UserServiceOuterClass.GetAllUserRequest getAllUserRequest ;
+    static UserServiceOuterClass.GetAllUserRequest.Response getAllUserResponse;
+    public void callGetAllUsers() {
+        getAllUserRequest = UserServiceOuterClass.GetAllUserRequest.newBuilder().build();
 
         try {
-            getUserByIdResponse = stub.getUserById(getUserByIdRequest);
+            getAllUserResponse = stub.getAllUser(getAllUserRequest);
             System.out.println(Status.OK.getCode().value());
 
             // updating the status code for ok
@@ -43,7 +32,7 @@ public class GetUserByIdRequest extends RequestBase{
         }
     }
 
-    public static UserServiceOuterClass.GetUserByIdRequest.Response getGetUserById() {
-        return getUserByIdResponse;
+    public static UserServiceOuterClass.GetAllUserRequest.Response getGetAllUserRsponse(){
+        return getAllUserResponse;
     }
 }

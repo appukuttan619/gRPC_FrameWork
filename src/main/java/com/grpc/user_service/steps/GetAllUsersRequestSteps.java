@@ -1,6 +1,6 @@
-package com.grpc.steps;
+package com.grpc.user_service.steps;
 
-import com.grpc.request.GetAllUsersRequest;
+import com.grpc.user_service.request.GetAllUsersRequest;
 import io.cucumber.java.en.When;
 
 public class GetAllUsersRequestSteps {

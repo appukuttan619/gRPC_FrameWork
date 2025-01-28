@@ -1,4 +1,4 @@
-package com.grpc.request;
+package com.grpc.user_service.request;
 
 import com.anand.grpc.UserServiceGrpc;
 import com.anand.grpc.UserServiceOuterClass;

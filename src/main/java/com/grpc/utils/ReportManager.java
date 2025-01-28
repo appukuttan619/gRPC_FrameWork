@@ -2,7 +2,7 @@ package com.grpc.utils;
 
 //import io.cucumber.messages.types.Scenario;
 
-import com.grpc.response.ResponseBase;
+import com.grpc.user_service.response.ResponseBase;
 import io.cucumber.java.Scenario;
 //import org.w3c.dom.Text;
 

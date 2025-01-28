@@ -1,6 +1,6 @@
-package com.grpc.steps.add_user;
+package com.grpc.user_service.steps;
 
-import com.grpc.response.AddUserResponse;
+import com.grpc.user_service.response.AddUserResponse;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;

@@ -1,6 +1,4 @@
-package com.grpc.response;
-
-import com.anand.grpc.UserServiceOuterClass;
+package com.grpc.user_service.response;
 
 public class AddUserResponse extends ResponseBase{
 

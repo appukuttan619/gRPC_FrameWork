@@ -1,9 +1,9 @@
-package com.grpc.response;
+package com.grpc.user_service.response;
 
 import com.anand.grpc.UserServiceOuterClass;
-import com.grpc.request.AddUserRequest;
-import com.grpc.request.GetAllUsersRequest;
-import com.grpc.request.GetUserByIdRequest;
+import com.grpc.user_service.request.AddUserRequest;
+import com.grpc.user_service.request.GetAllUsersRequest;
+import com.grpc.user_service.request.GetUserByIdRequest;
 
 public class ResponseBase {
 

@@ -1,6 +1,6 @@
-package com.grpc.steps;
+package com.grpc.user_service.steps;
 
-import com.grpc.request.GetUserByIdRequest;
+import com.grpc.user_service.request.GetUserByIdRequest;
 import io.cucumber.java.en.*;
 
 public class GetUserByIdRequestSteps {

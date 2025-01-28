@@ -1,27 +1,28 @@
-package com.grpc.request;
+package com.grpc.user_service.request;
 
 import com.anand.grpc.UserServiceOuterClass;
-import com.grpc.response.ResponseBase;
+import com.grpc.user_service.response.AddUserResponse;
+import com.grpc.user_service.response.ResponseBase;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
-public class AddUserRequest extends RequestBase{
+public class GetUserByIdRequest extends RequestBase{
 
-    UserServiceOuterClass.AddUserRequest addUserRequest;
+    public static UserServiceOuterClass.GetUserByIdRequest.Response getUserByIdResponse;
 
-    private static UserServiceOuterClass.AddUserRequest.Response addUserResponse;
+    UserServiceOuterClass.GetUserByIdRequest getUserByIdRequest;
 
-    public void setUserNameAndHobby(String name, String hobby) {
-        addUserRequest = UserServiceOuterClass.AddUserRequest.newBuilder()
-                .setName(name)
-                .addHobbies(hobby)
+
+    public void setIdFromAddUser() {
+        getUserByIdRequest = UserServiceOuterClass.GetUserByIdRequest.newBuilder()
+                .setId(AddUserResponse.userId + "")
                 .build();
     }
 
-    public void callAddUser() {
-        try {
-            addUserResponse = stub.addUser(addUserRequest);
+    public void callGetUserById() {
 
+        try {
+            getUserByIdResponse = stub.getUserById(getUserByIdRequest);
             System.out.println(Status.OK.getCode().value());
 
             // updating the status code for ok
@@ -37,14 +38,9 @@ public class AddUserRequest extends RequestBase{
             ResponseBase.statusCode = status.getStatus().getCode().value();
             ResponseBase.status = status.getStatus().getCode() + "";
         }
-
     }
 
-
-    public static UserServiceOuterClass.AddUserRequest.Response getAddUserResponse(){
-//        System.out.println("lksjdflskjdflksjdflksjdlfkj");
-//
-//        System.out.println(addUserResponse.getUser().getName());
-        return addUserResponse;
+    public static UserServiceOuterClass.GetUserByIdRequest.Response getGetUserById() {
+        return getUserByIdResponse;
     }
 }

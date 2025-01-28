@@ -1,4 +1,4 @@
-package com.grpc.steps;
+package com.grpc.hooks;
 
 import com.grpc.utils.ChannelManager;
 import com.grpc.utils.ConfigReader;

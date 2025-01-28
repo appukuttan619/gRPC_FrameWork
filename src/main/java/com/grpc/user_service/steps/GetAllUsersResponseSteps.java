@@ -1,6 +1,6 @@
-package com.grpc.steps;
+package com.grpc.user_service.steps;
 
-import com.grpc.response.GetAllUsersResponse;
+import com.grpc.user_service.response.GetAllUsersResponse;
 import io.cucumber.java.en.Then;
 
 public class GetAllUsersResponseSteps {

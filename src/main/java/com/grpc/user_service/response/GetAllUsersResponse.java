@@ -1,4 +1,4 @@
-package com.grpc.response;
+package com.grpc.user_service.response;
 
 import com.anand.grpc.UserServiceOuterClass;
 

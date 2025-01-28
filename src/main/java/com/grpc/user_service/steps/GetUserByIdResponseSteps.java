@@ -1,7 +1,7 @@
-package com.grpc.steps;
+package com.grpc.user_service.steps;
 
-import com.grpc.response.GetUserByIdResponse;
-import com.grpc.response.ResponseBase;
+import com.grpc.user_service.response.GetUserByIdResponse;
+import com.grpc.user_service.response.ResponseBase;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
